@@ -1,0 +1,479 @@
+/* =========================
+RESET
+========================= */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+background: linear-gradient(-45deg, #0f172a, #020617, #0b2447, #111827);
+background-size: 400% 400%;
+animation: bg 12s ease infinite;
+color: white;
+line-height: 1.6;
+}
+
+@keyframes bg {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+/* =========================
+SECTIONS
+========================= */
+section {
+padding: 80px 10%;
+}
+
+h2 {
+text-align: center;
+font-size: 2.2rem;
+margin-bottom: 40px;
+color: #38bdf8;
+}
+
+/* =========================
+BUTTONS
+========================= */
+.btn {
+display: inline-block;
+padding: 10px 20px;
+background: #38bdf8;
+color: black;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+position: relative;
+overflow: hidden;
+transition: 0.3s;
+}
+
+.btn:hover {
+transform: scale(1.05);
+}
+
+.btn::after {
+content: "";
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: rgba(255,255,255,0.3);
+transition: 0.5s;
+}
+
+.btn:hover::after {
+left: 100%;
+}
+
+/* =========================
+GLASS EFFECT CARDS
+========================= */
+.about-box,
+.project-card,
+.contact-form,
+.skill {
+background: rgba(30, 41, 59, 0.6);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(255,255,255,0.1);
+border-radius: 12px;
+padding: 20px;
+}
+
+/* =========================
+HERO SECTION
+========================= */
+.hero {
+display: flex;
+justify-content: space-between;
+align-items: center;
+min-height: 100vh;
+flex-wrap: wrap;
+gap: 40px;
+}
+
+.hero-text {
+flex: 1;
+min-width: 280px;
+}
+
+.hero-text h1 {
+font-size: 3rem;
+}
+
+.hero-text h1 span {
+color: #38bdf8;
+}
+
+.hero-text h3 {
+color: #94a3b8;
+margin: 10px 0;
+}
+
+.hero-img {
+flex: 1;
+display: flex;
+justify-content: center;
+}
+
+.hero-img img {
+width: 320px;
+max-width: 100%;
+border-radius: 20px;
+animation: float 4s ease-in-out infinite;
+box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+@keyframes float {
+0% { transform: translateY(0); }
+50% { transform: translateY(-15px); }
+100% { transform: translateY(0); }
+}
+
+/* =========================
+SOCIAL ICONS
+========================= */
+.socials a,
+.socials-contact a {
+color: white;
+margin-right: 12px;
+font-size: 1.3rem;
+transition: 0.3s;
+}
+
+.socials a:hover,
+.socials-contact a:hover {
+color: #38bdf8;
+}
+
+/* =========================
+ABOUT
+========================= */
+.about-box {
+max-width: 900px;
+margin: auto;
+}
+
+/* =========================
+SKILLS
+========================= */
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+gap: 15px;
+text-align: center;
+}
+
+.skill {
+transition: 0.3s;
+}
+
+.skill:hover {
+transform: scale(1.05);
+box-shadow: 0 0 15px rgba(56,189,248,0.5);
+}
+
+/* =========================
+PROJECTS
+========================= */
+.project-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+}
+
+.project-card {
+transition: 0.4s;
+}
+
+.project-card:hover {
+transform: perspective(1000px) rotateX(5deg) translateY(-10px);
+box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
+}
+
+/* =========================
+CONTACT
+========================= */
+.contact-container {
+display: flex;
+flex-wrap: wrap;
+gap: 40px;
+}
+
+.contact-info,
+.contact-form {
+flex: 1;
+min-width: 280px;
+}
+
+.input-box {
+position: relative;
+margin-bottom: 20px;
+}
+
+.input-box input,
+.input-box textarea {
+width: 100%;
+padding: 10px;
+background: transparent;
+border: 1px solid #334155;
+color: white;
+border-radius: 6px;
+outline: none;
+}
+
+.input-box textarea {
+min-height: 120px;
+}
+
+/* =========================
+FOOTER
+========================= */
+footer {
+text-align: center;
+padding: 20px;
+background: #020617;
+margin-top: 40px;
+}
+
+/* =========================
+RESPONSIVE DESIGN
+========================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+.hero-text h1 {
+font-size: 2.5rem;
+}
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+.hero {
+flex-direction: column;
+text-align: center;
+}
+
+.hero-text h1 {
+font-size: 2rem;
+}
+
+section {
+padding: 60px 5%;
+}
+
+.contact-container {
+flex-direction: column;
+}
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+.hero-text h1 {
+font-size: 1.8rem;
+}
+
+.btn {
+width: 100%;
+text-align: center;
+}
+}
+/* =========================
+ULTRA PREMIUM BUTTONS
+========================= */
+
+.btn-group {
+display: flex;
+gap: 12px;
+margin-top: 15px;
+flex-wrap: wrap;
+}
+
+/* BASE BUTTON */
+.btn-small {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+padding: 11px 16px;
+border-radius: 10px;
+font-size: 0.9rem;
+font-weight: 600;
+text-decoration: none;
+position: relative;
+overflow: hidden;
+transition: all 0.35s ease;
+letter-spacing: 0.3px;
+}
+
+/* =========================
+GITHUB BUTTON (DARK PREMIUM)
+========================= */
+
+.btn-github {
+color: #fff;
+background: #0b1220;
+border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-github::before {
+content: "";
+position: absolute;
+inset: 0;
+background: radial-gradient(circle at top left, rgba(255,255,255,0.1), transparent 60%);
+opacity: 0;
+transition: 0.4s;
+}
+
+.btn-github:hover {
+transform: translateY(-4px);
+box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+}
+
+.btn-github:hover::before {
+opacity: 1;
+}
+
+/* =========================
+LIVE DEMO BUTTON (GRADIENT PREMIUM)
+========================= */
+
+.btn-live {
+color: #0f172a;
+background: linear-gradient(135deg, #38bdf8, #0ea5e9, #60a5fa);
+background-size: 200% 200%;
+animation: gradientMove 4s ease infinite;
+border: none;
+}
+
+@keyframes gradientMove {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+.btn-live:hover {
+transform: translateY(-4px) scale(1.03);
+box-shadow: 0 15px 30px rgba(56,189,248,0.5);
+}
+
+/* =========================
+ICON ANIMATION
+========================= */
+
+.btn-small i {
+transition: 0.3s;
+}
+
+.btn-small:hover i {
+transform: translateX(3px);
+}
+/* =========================
+FINAL RESPONSIVE FIX (PRO LEVEL)
+========================= */
+
+/* LARGE TABLET */
+@media (max-width: 1024px) {
+.hero-text h1 {
+font-size: 2.5rem;
+}
+
+section {
+padding: 70px 8%;
+}
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+
+/* HERO STACK */
+.hero {
+flex-direction: column;
+text-align: center;
+gap: 25px;
+}
+
+.hero-img img {
+width: 260px;
+}
+
+/* BUTTONS CENTER */
+.btn-group {
+justify-content: center;
+}
+
+/* ABOUT BOX */
+.about-box {
+padding: 18px;
+}
+
+/* SKILLS */
+.skills-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+/* PROJECTS */
+.project-grid {
+grid-template-columns: 1fr;
+}
+
+/* CONTACT STACK */
+.contact-container {
+flex-direction: column;
+text-align: center;
+}
+
+/* INPUT FIX */
+.contact-form {
+width: 100%;
+}
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+
+.hero-text h1 {
+font-size: 1.8rem;
+}
+
+.hero-text h3 {
+font-size: 1rem;
+}
+
+.hero-img img {
+width: 200px;
+}
+
+section {
+padding: 50px 5%;
+}
+
+/* BUTTON FULL WIDTH */
+.btn-small {
+width: 100%;
+justify-content: center;
+}
+
+/* SKILLS SINGLE COLUMN */
+.skills-grid {
+grid-template-columns: 1fr;
+}
+
+/* PROJECT SPACING */
+.project-card {
+padding: 15px;
+}
+
+/* TEXT SCALE FIX */
+p {
+font-size: 0.95rem;
+}
+}
